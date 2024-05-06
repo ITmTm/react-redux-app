@@ -44,6 +44,7 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "classnames": "^2.5.1",
     "json-server": "^0.17.4"
   }
