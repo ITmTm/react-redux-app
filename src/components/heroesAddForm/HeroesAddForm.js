@@ -10,10 +10,67 @@
 // Дополнительно:
 // Элементы <option></option> желательно сформировать на базе данных из фильтров
 
+import {useHttp} from "../../hooks/http.hook";
+import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { v4 as uuidv4 } from 'uuid';
+
+import { heroCreated } from "../../actions";
 
 const HeroesAddForm = () => {
+	// Состояние для контроля формы
+	const [heroName, setHeroName] = useState('');
+	const [heroDescr, setHeroDescr] = useState('');
+	const [heroElement, setHeroElement] = useState('');
+
+	const {filters, filtersLoadingStatus} = useSelector(state => state);
+	const dispatch = useDispatch();
+	const {request} = useHttp();
+
+	const onSubmitHandler = (e) => {
+		e.preventDefault();
+		// Генерация id через библиотеку
+		const newHero = {
+			id: uuidv4(),
+			name: heroName,
+			description: heroDescr,
+			element: heroElement
+		}
+
+		// Отправка данных на сервер в формате JSON
+		// ТОЛЬКО если запрос успешен - отправляем персонажа в store
+		request('http://localhost:3001/heroes', 'POST', JSON.stringify(newHero))
+			.then(res => console.log(res, 'Отправка успешна'))
+			.then(dispatch(heroCreated(newHero)))
+			.catch(err => console.log(err));
+
+		// Очистка формы после отправки
+		setHeroName('');
+		setHeroDescr('');
+		setHeroElement('');
+	}
+
+	const renderFilters = (filters, status) => {
+		if (status === 'loading') {
+			return <option>Загрузка элементов...</option>
+		} else if (status === 'error') {
+			return <option>Ошибка загрузки!</option>
+		}
+
+		// Если фильтры есть, то рендерим их
+		if (filters && filters.length > 0) {
+			return filters.map(({name, label}) => {
+				// Один из фильтров тут не нужен
+				// eslint-disable-next-line
+				if (name === 'all') return;
+
+				return <option key={name} value={name}>{label}</option>
+			})
+		}
+	}
+
 	return (
-		<form className='border p-4 shadow-lg rounded'>
+		<form className='border p-4 shadow-lg rounded' onSubmit={onSubmitHandler}>
 			<div className='mb-3'>
 				<label htmlFor="name" className='form-label fs-4'>Имя нового героя</label>
 				<input
@@ -23,6 +80,8 @@ const HeroesAddForm = () => {
 					className='form-control'
 					id='name'
 					placeholder='Как меня зовут?'
+					value={heroName}
+					onChange={(e) => setHeroName(e.target.value)}
 				/>
 			</div>
 
@@ -35,6 +94,8 @@ const HeroesAddForm = () => {
 					id='text'
 					placeholder='Что я умею?'
 					style={{'height': '130px'}}
+					value={heroDescr}
+					onChange={(e) => setHeroDescr(e.target.value)}
 				/>
 			</div>
 
@@ -45,12 +106,11 @@ const HeroesAddForm = () => {
 					className='form-select'
 					id='element'
 					name='element'
+					value={heroElement}
+					onChange={(e) => setHeroElement(e.target.value)}
 				>
 					<option>Я владею элементом...</option>
-					<option value="fire">Огонь</option>
-					<option value="water">Вода</option>
-					<option value="wind">Ветер</option>
-					<option value="earth">Земля</option>
+					{renderFilters(filters, filtersLoadingStatus)}
 				</select>
 			</div>
 
