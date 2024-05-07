@@ -1,5 +1,30 @@
 {
-  "heroes": [],
+  "heroes": [
+    {
+      "id": "314fcdc0-704b-4748-b086-fb77a403b906",
+      "name": "Udyr",
+      "description": "Forests",
+      "element": "fire"
+    },
+    {
+      "id": "4f18c6b7-edf5-487b-a3f5-1e6c6139bcba",
+      "name": "Morgana",
+      "description": "Shadow support",
+      "element": "earth"
+    },
+    {
+      "id": "41886a29-8ccc-4047-8a8d-751a69a830d7",
+      "name": "Garen",
+      "description": "Mili",
+      "element": "wind"
+    },
+    {
+      "id": "0b325c23-4adf-4b23-b4b1-b3491c20672b",
+      "name": "MF",
+      "description": "adc",
+      "element": "water"
+    }
+  ],
   "filters": [
     {
       "name": "all",
