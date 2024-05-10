@@ -48,10 +48,4 @@ const heroesSlice = createSlice({
 const {actions, reducer} = heroesSlice;
 
 export default reducer;
-export const {
-	heroesFetching,
-	heroesFetched,
-	heroesFetchingError,
-	heroCreated,
-	heroDeleted
-} = actions;
+export const {heroCreated, heroDeleted} = actions;
