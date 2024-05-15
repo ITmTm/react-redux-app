@@ -1,6 +1,7 @@
 const HeroesListItem = ({name, description, element, onDelete}) => {
 
 	let elementClassName;
+	const unknownHero = 'https://thumbs.dreamstime.com/b/grunge-lettering-unknown-hero-squad-number-style-white-grunge-lettering-unknown-hero-squad-number-style-266127814.jpg';
 
 	switch (element) {
 		case 'fire':
@@ -22,7 +23,7 @@ const HeroesListItem = ({name, description, element, onDelete}) => {
 	return (
 		<li
 			className={`card flex-row mb-4 shadow-lg text-white ${elementClassName}`}>
-			<img src='https://thumbs.dreamstime.com/b/grunge-lettering-unknown-hero-squad-number-style-white-grunge-lettering-unknown-hero-squad-number-style-266127814.jpg'
+			<img src={unknownHero}
 					 className='img-fluid w-25 d-inline'
 					 alt='unknown hero'
 					 style={{'objectFit': 'cover'}}
