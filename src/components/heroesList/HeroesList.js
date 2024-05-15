@@ -24,6 +24,8 @@ const HeroesList = () => {
 		isError
 	} = useGetHeroesQuery();
 
+	const [deleteHero] = useDeleteHeroMutation();
+
 	const activeFilter = useSelector(state => state.filters.activeFilter);
 
 	const filteredHeroes = useMemo(() => {
@@ -48,11 +50,14 @@ const HeroesList = () => {
 	}, []);
 
 	const onDelete = useCallback((id) => {
-		// Удаление персонажа по id
-		request(`http://localhost:3001/heroes/${id}`, 'DELETE')
-			.then(data => console.log(data, 'Deleted'))
-			.then(dispatch(heroDeleted(id)))
-			.catch(err => console.log(err));
+		deleteHero(id);
+
+			// удаление, вместо этого теперь deleteHero
+		// // Удаление персонажа по id
+		// request(`http://localhost:3001/heroes/${id}`, 'DELETE')
+		// 	.then(data => console.log(data, 'Deleted'))
+		// 	.then(dispatch(heroDeleted(id)))
+		// 	.catch(err => console.log(err));
 
 		// eslint-disable-next-line
 	}, [request]);
