@@ -3,16 +3,19 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const apiSlice = createApi({
 	reducerPath: 'api',
 	baseQuery: fetchBaseQuery({baseUrl: 'http://localhost:3001'}),
+	tagTypes: ['Heroes'],
 	endpoints: builder => ({
 		getHeroes: builder.query({
-			query: () => '/heroes'
+			query: () => '/heroes',
+			providesTags: ['Heroes']
 		}),
-		creteHero: builder.mutation({
+		createHero: builder.mutation({
 			query: hero => ({
 				url: '/heroes',
 				method: 'POST',
 				body: hero
-			})
+			}),
+			invalidatesTags: ['Hero']
 		})
 	})
 });
