@@ -6,8 +6,15 @@ export const apiSlice = createApi({
 	endpoints: builder => ({
 		getHeroes: builder.query({
 			query: () => '/heroes'
+		}),
+		creteHero: builder.mutation({
+			query: hero => ({
+				url: '/heroes',
+				method: 'POST',
+				body: hero
+			})
 		})
 	})
 });
 
-export const {useGetHeroesQuery} = apiSlice;
+export const {useGetHeroesQuery, useCreateHeroMutation} = apiSlice;
