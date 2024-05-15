@@ -1,5 +1,4 @@
 import { configureStore } from "@reduxjs/toolkit";
-import heroes from "../components/heroesList/heroesSlice";
 import filters from "../components/heroesFilters/filtersSlice";
 import {apiSlice} from "../api/apiSlice";
 
@@ -16,7 +15,6 @@ const stringMiddleware = () => (next) => (action) => {
 	// Redux Toolkit
 const store = configureStore({
 	reducer: {
-		heroes,
 		filters,
 		[apiSlice.reducerPath]: apiSlice.reducer
 	},
