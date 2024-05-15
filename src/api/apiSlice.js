@@ -15,7 +15,7 @@ export const apiSlice = createApi({
 				method: 'POST',
 				body: hero
 			}),
-			invalidatesTags: ['Hero']
+			invalidatesTags: ['Heroes']
 		})
 	})
 });
