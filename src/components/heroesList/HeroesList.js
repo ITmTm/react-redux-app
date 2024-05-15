@@ -17,6 +17,16 @@ import './heroesList.scss';
 // Удаление идет и с json файла при помощи метода DELETE
 
 const HeroesList = () => {
+
+	const {
+		data: heroes = [],
+		isFetching,
+		isLoading,
+		isSuccess,
+		isError,
+		error
+	} = useGetHeroesQuery();
+
 	const filteredHeroes = useSelector(filteredHeroesSelector);
 	const heroesLoadingStatus = useSelector(state => state.heroes.heroesLoadingStatus);
 	const dispatch = useDispatch();
@@ -38,9 +48,9 @@ const HeroesList = () => {
 		// eslint-disable-next-line
 	}, [request]);
 
-	if (heroesLoadingStatus === "loading") {
+	if (isLoading) {
 		return <Spinner/>;
-	} else if (heroesLoadingStatus === "error") {
+	} else if (isError) {
 		return <h5 className="text-center mt-5">Ошибка загрузки</h5>
 	}
 
