@@ -18,6 +18,7 @@ import store from "../../store";
 
 import { selectAll } from "../heroesFilters/filtersSlice";
 import { heroCreated } from "../heroesList/heroesSlice";
+import { useCreateHeroMutation } from "../../api/apiSlice";
 
 const HeroesAddForm = () => {
 	// Состояние для контроля формы
