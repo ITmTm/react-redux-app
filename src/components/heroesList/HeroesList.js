@@ -1,9 +1,9 @@
-import {useHttp} from '../../hooks/http.hook';
-import { useEffect, useCallback, useMemo } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+// import {useHttp} from '../../hooks/http.hook';
+import { useCallback, useMemo } from 'react';
+import { useSelector } from 'react-redux';
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 
-import { heroDeleted, fetchHeroes } from "./heroesSlice";
+// import { heroDeleted, fetchHeroes } from "./heroesSlice";
 import { useGetHeroesQuery, useDeleteHeroMutation } from "../../api/apiSlice";
 
 import HeroesListItem from "../heroesListItem/HeroesListItem";
@@ -40,14 +40,15 @@ const HeroesList = () => {
 
 	// const filteredHeroes = useSelector(filteredHeroesSelector); // Удален
 	// const heroesLoadingStatus = useSelector(state => state.heroes.heroesLoadingStatus);  // Удален
-	const dispatch = useDispatch();
-	const {request} = useHttp();
+	// const dispatch = useDispatch();
+	// const {request} = useHttp();
 
-	useEffect(() => {
-		dispatch(fetchHeroes());
-
-		// eslint-disable-next-line
-	}, []);
+		// Удален
+	// useEffect(() => {
+	// 	dispatch(fetchHeroes());
+	//
+	// 	// eslint-disable-next-line
+	// }, []);
 
 	const onDelete = useCallback((id) => {
 		deleteHero(id);
@@ -60,7 +61,7 @@ const HeroesList = () => {
 		// 	.catch(err => console.log(err));
 
 		// eslint-disable-next-line
-	}, [request]);
+	}, []);
 
 	if (isLoading) {
 		return <Spinner/>;
