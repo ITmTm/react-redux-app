@@ -4,8 +4,7 @@ Simple TodoList with heroes in React, Redux, RTK
 
 <hr>
 
-
-![bandicam 2024](https://github.com/ITmTm/todo-list-app/assets/98873757/a68d7597-3340-478b-acc4-f07688f5c10c)
+![react-redux-app](https://github.com/ITmTm/react-redux-app/assets/98873757/2990eac3-16ba-4c34-8e7d-4a98920b0f83)
 
 <hr>
 
