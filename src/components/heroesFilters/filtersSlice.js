@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk, createEntityAdapter } from "@reduxjs/toolkit";
-// import {useHttp} from "../../hooks/http.hook";
+import {useHttp} from "../../hooks/http.hook";
 
 const filtersAdapter = createEntityAdapter();
 
@@ -14,27 +14,13 @@ const initialState = filtersAdapter.getInitialState({
 	activeFilter: 'all'
 });
 
-
 export const fetchFilters = createAsyncThunk(
 	'filters/fetchFilters',
 	async () => {
-		const response = await fetch('/api/heroes');
-		if (!response.ok) {
-			throw new Error('Failed to fetch filters');
-		}
-		const data = await response.json();
-		return data.filters;
+		const {request} = useHttp();
+		return await request('http://localhost:3001/filters');
 	}
 );
-
-	// local
-// export const fetchFilters = createAsyncThunk(
-// 	'filters/fetchFilters',
-// 	async () => {
-// 		const {request} = useHttp();
-// 		return await request('http://localhost:3001/filters');
-// 	}
-// );
 
 const filtersSlice = createSlice({
 	name: 'filters',
