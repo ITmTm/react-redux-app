@@ -9,6 +9,10 @@ const filtersAdapter = createEntityAdapter();
 // 	activeFilter: 'all'
 // }
 
+const initialState = filtersAdapter.getInitialState({
+	filtersLoadingStatus: 'idle',
+	activeFilter: 'all'
+});
 
 export const fetchFilters = createAsyncThunk(
 	'filters/fetchFilters',
