@@ -1,70 +1,46 @@
-# Getting Started with Create React App
+# React Redux App
+Simple TodoList with heroes in React, Redux, RTK
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+<hr>
 
-In the project directory, you can run:
 
-### `npm start`
+![bandicam 2024](https://github.com/ITmTm/todo-list-app/assets/98873757/a68d7597-3340-478b-acc4-f07688f5c10c)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<hr>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Функции
+* Создание героя с его именем, описанием и выбором елемента
+* Фильтрация героев по элементам
+* Удаление героев
 
-### `npm test`
+<hr>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Technologies
+[![ReactJS](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org)
+[![Redux](https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white)](https://redux.js.org)
+[![Redux-Toolkit](https://img.shields.io/badge/Redux%20Toolkit-%23593d88?style=for-the-badge&logo=redux
+)](https://redux-toolkit.js.org/)
 
-### `npm run build`
+<hr>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Using Libraries
+[![Classnames](https://img.shields.io/badge/classnames-%23159957?style=for-the-badge&logo=Classnames
+)](https://jedwatson.github.io/classnames//)
+[![Sass](https://img.shields.io/badge/sass(scss)-%23bf4080?style=for-the-badge&logo=sass
+)](https://sass-lang.com/)
+[![Uuid](https://img.shields.io/badge/uuid-black?style=for-the-badge&logo=uuid
+)](https://github.com/uuidjs/uuid)
+[![Reselect](https://img.shields.io/badge/reselect-yellow?style=for-the-badge&logo=reselect
+)](https://github.com/reduxjs/reselect)
+[![Bootstrap](https://img.shields.io/badge/bootstrap-%23712cf9?style=for-the-badge&logo=bootstrap
+)](https://getbootstrap.com/)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<hr>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Getting Started
+Tools needed to run this app: `node` and `npm`
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- `npm install` to install dependencies
+- `npm start` to run the app
+- Go to `http://localhost:3000`
